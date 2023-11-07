@@ -1,0 +1,18 @@
+<div class="search-bar">
+    <input type="search" name="q" [(ngModel)]="pokemonName" autofocus>
+    <button (click)="getPokemon(pokemonName)">Pesquisar</button>
+</div>
+<div class="poke-card">
+    <div class="container">
+        <h2 class="poke-card__title">{{pokemonData.name}}</h2>
+        <div class="poke-card__id">
+            <span>{{pokemonData.id}}</span>
+        </div>
+    </div>
+    <div class="poke-card__img">
+        <img [src]="pokemonData.sprites.front_default" alt="pokemon">
+    </div>
+    <div class="poke-card__attributes">
+        <span class="attributes__type" *ngFor="let pokemonT of pokemonData.types">{{pokemonT.type.name}}</span>
+    </div>
+</div>
